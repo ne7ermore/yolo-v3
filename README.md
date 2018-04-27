@@ -11,7 +11,7 @@ YOLO-v3 implemention from "[YOLOv3: An Incremental Improvement](https://pjreddie
 * numpy 1.13.1
 * PIL
 
-## Train
+## Detect
 ```
 python3 detect.py
 ```
