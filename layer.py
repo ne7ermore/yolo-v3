@@ -80,8 +80,8 @@ class BasicPred(nn.Module):
             return detections
 
     def predict_transform(self, prediction):
-        # borrowed from https://github.com/ayooshkathuria/YOLO_v3_tutorial_from_scratch/blob/master/util.py#L47
-
+        """ borrowed from https://github.com/ayooshkathuria/YOLO_v3_tutorial_from_scratch/blob/master/util.py#L47
+        """
         batch_size = prediction.size(0)
         stride = self.height // prediction.size(2)
         grid_size = self.height // stride
@@ -95,12 +95,10 @@ class BasicPred(nn.Module):
             batch_size, grid_size * grid_size * num_anchors, bbox_attrs)
         anchors = [(a[0] / stride, a[1] / stride) for a in self.anchors]
 
-        # Sigmoid the  centre_X, centre_Y. and object confidencce
         prediction[:, :, 0] = torch.sigmoid(prediction[:, :, 0])
         prediction[:, :, 1] = torch.sigmoid(prediction[:, :, 1])
         prediction[:, :, 4] = torch.sigmoid(prediction[:, :, 4])
 
-        # Add the center offsets
         grid = np.arange(grid_size)
         a, b = np.meshgrid(grid, grid)
 
@@ -112,7 +110,6 @@ class BasicPred(nn.Module):
 
         prediction[:, :, :2] += x_y_offset
 
-        # log space transform height and the width
         anchors = self.torch.FloatTensor(anchors)
 
         anchors = anchors.repeat(grid_size * grid_size, 1).unsqueeze(0)
