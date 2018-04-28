@@ -93,11 +93,11 @@ class BasicPred(nn.Module):
         prediction = prediction.transpose(1, 2).contiguous()
         prediction = prediction.view(
             batch_size, grid_size * grid_size * num_anchors, bbox_attrs)
+
         anchors = [(a[0] / stride, a[1] / stride) for a in self.anchors]
 
         prediction[:, :, 0] = torch.sigmoid(prediction[:, :, 0])
         prediction[:, :, 1] = torch.sigmoid(prediction[:, :, 1])
-        prediction[:, :, 4] = torch.sigmoid(prediction[:, :, 4])
 
         grid = np.arange(grid_size)
         a, b = np.meshgrid(grid, grid)
@@ -114,10 +114,9 @@ class BasicPred(nn.Module):
 
         anchors = anchors.repeat(grid_size * grid_size, 1).unsqueeze(0)
         prediction[:, :, 2:4] = torch.exp(prediction[:, :, 2:4]) * anchors
-
-        prediction[:, :, 5: 5 +
-                   self.classes] = torch.sigmoid((prediction[:, :, 5: 5 + self.classes]))
-
         prediction[:, :, :4] *= stride
+
+        # sigmoid Objectness and classes confidence
+        prediction[:, :, 4:] = torch.sigmoid(prediction[:, :, 4:])
 
         return prediction
