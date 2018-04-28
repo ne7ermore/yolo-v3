@@ -110,18 +110,14 @@ class DarkNet(nn.Module):
         x = self.layer_4(self.conv_1(x))
         r_1 = x
 
-        det, x = self.seq_2(x)
+        det_1, x = self.seq_2(x)
 
         x = self.uns_1(x)
         x = torch.cat((x, r_1), 1)
-
-        _det, x = self.pred_2(x)
-        det = torch.cat((det, _det), 1)
+        det_2, x = self.pred_2(x)
 
         x = self.uns_2(x)
         x = torch.cat((x, r_0), 1)
+        det_3 = self.pred_3(x)
 
-        _det = self.pred_3(x)
-        det = torch.cat((det, _det), 1)
-
-        return det
+        return torch.cat((det_1, det_2, det_3), 1)
