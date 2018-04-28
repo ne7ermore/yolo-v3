@@ -12,6 +12,7 @@ YOLO-v3 implemention from "[YOLOv3: An Incremental Improvement](https://pjreddie
 * PIL
 
 ## Detect
+Download [yolo.v3.coco.weights.pt](https://pan.baidu.com/s/1T132ayZiVsWLD3XQCbFKxQ) to $(PROJECT_HOME)/
 ```
 python3 detect.py
 ```
