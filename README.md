@@ -11,8 +11,46 @@ YOLO-v3 implemention from "[YOLOv3: An Incremental Improvement](https://pjreddie
 * numpy 1.13.1
 * PIL
 
-## Detect
+## Usage
+
+### Options
+```
+usage: detect.py [-h] [--images IMAGES] [--result RESULT]
+                 [--batch_size BATCH_SIZE] [--img_size IMG_SIZE]
+                 [--confidence CONFIDENCE] [--nms_thresh NMS_THRESH]
+                 [--weights WEIGHTS] [--no_cuda]
+
+YOLO-v3 Detect
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --images IMAGES
+  --result RESULT
+  --batch_size BATCH_SIZE
+  --img_size IMG_SIZE
+  --confidence CONFIDENCE
+  --nms_thresh NMS_THRESH
+  --weights WEIGHTS
+  --no_cuda
+```
+
+### Detect
 Download [yolo.v3.coco.weights.pt](https://pan.baidu.com/s/1T132ayZiVsWLD3XQCbFKxQ) to $(PROJECT_HOME)/
 ```
 python3 detect.py
 ```
+
+## Citation
+If you find this code useful for your research, please cite:
+```
+@misc{TaoYOLOv3,
+  author = {Ne7ermore Tao},
+  title = {yolo-v3},
+  publisher = {GitHub},
+  year = {2018},
+  howpublished = {\url{https://github.com/ne7ermore/yolo-v3}}
+}
+```
+
+## Contact
+Feel free to contact me if there is any questions (Tao liaoyuanhuo1987@gmail.com).
