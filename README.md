@@ -35,7 +35,7 @@ optional arguments:
 ```
 
 ### Detect
-Download [yolo.v3.coco.weights.pt](https://pan.baidu.com/s/1T132ayZiVsWLD3XQCbFKxQ) to $(PROJECT_HOME)/
+Download weight from [GoogleDrive](https://drive.google.com/open?id=1-bRaJxqfGMf8hppzqnp4e_2qFV2tj7Y-) or [BaiduYunPan](https://pan.baidu.com/s/1T132ayZiVsWLD3XQCbFKxQ) to $(PROJECT_HOME)/
 ```
 python3 detect.py
 ```
