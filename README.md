@@ -3,7 +3,7 @@ YOLO-v3 implemention from "[YOLOv3: An Incremental Improvement](https://pjreddie
 <p align="center"><img width="40%" src="result/res_man.jpeg" /></p>
 
 ## Tutorial
-Get tutorial series in [HonePage](https://ne7ermore.github.io/post/yolo-v3/) or [ZhihuPage](https://zhuanlan.zhihu.com/p/36298401) if know Chinese
+Get tutorial series in [HomePage](https://ne7ermore.github.io/post/yolo-v3/) or [ZhihuPage](https://zhuanlan.zhihu.com/p/36298401) if know Chinese
 
 ## Requirement
 * python 3.6
