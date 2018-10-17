@@ -6,10 +6,9 @@ YOLO-v3 implemention from "[YOLOv3: An Incremental Improvement](https://pjreddie
 Get tutorial series in [HomePage](https://ne7ermore.github.io/post/yolo-v3/) or [ZhihuPage](https://zhuanlan.zhihu.com/p/36298401) if know Chinese
 
 ## Requirement
-* python 3.6
-* pytorch 0.4.0
-* numpy 1.13.1
-* PIL
+```
+pip install -r requirements.txt
+```
 
 ## Usage
 

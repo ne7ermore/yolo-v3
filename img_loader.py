@@ -49,6 +49,7 @@ class IMGProcess(object):
             vs = Variable(torch.cat(tensors, 0))
             if self.use_cuda:
                 vs = vs.cuda()
+                imgs_dim = imgs_dim.cuda()
 
         return vs, imgs_dim
 
