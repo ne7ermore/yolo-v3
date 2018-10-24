@@ -3,7 +3,7 @@ YOLO-v3 implemention from "[YOLOv3: An Incremental Improvement](https://pjreddie
 <p align="center"><img width="40%" src="result/res_man.jpeg" /></p>
 
 ## Tutorial
-Get tutorial series in [HomePage](https://ne7ermore.github.io/post/yolo-v3/) or [ZhihuPage](https://zhuanlan.zhihu.com/p/36298401) if know Chinese
+Get tutorial series in [HomePage](https://ne7ermore.github.io/post/yolo-v3/)
 
 ## Requirement
 ```
@@ -12,29 +12,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Options
+### Train
 ```
-usage: detect.py [-h] [--images IMAGES] [--result RESULT]
-                 [--batch_size BATCH_SIZE] [--img_size IMG_SIZE]
-                 [--confidence CONFIDENCE] [--nms_thresh NMS_THRESH]
-                 [--weights WEIGHTS] [--no_cuda]
+make
 
-YOLO-v3 Detect
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --images IMAGES
-  --result RESULT
-  --batch_size BATCH_SIZE
-  --img_size IMG_SIZE
-  --confidence CONFIDENCE
-  --nms_thresh NMS_THRESH
-  --weights WEIGHTS
-  --no_cuda
+python3 train.py
 ```
 
 ### Detect
-Download weight from [GoogleDrive](https://drive.google.com/open?id=1-bRaJxqfGMf8hppzqnp4e_2qFV2tj7Y-) or [BaiduYunPan](https://pan.baidu.com/s/1T132ayZiVsWLD3XQCbFKxQ) to $(PROJECT_HOME)/
+Download weight from [GoogleDrive](https://drive.google.com/file/d/1h3uo1lQoufEHPlGVHPF7_ZhqToTJkMvX/view?usp=sharing)
 ```
 python3 detect.py
 ```

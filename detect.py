@@ -1,5 +1,7 @@
 import argparse
+
 import torch
+
 from darknet import DarkNet
 from img_loader import IMGProcess
 
@@ -18,8 +20,8 @@ def main():
     args = parser.parse_args()
     use_cuda = torch.cuda.is_available() and not args.no_cuda
 
-    model = DarkNet(use_cuda)
     model_source = torch.load(args.weights)
+    model = DarkNet(use_cuda,model_source["num_classes"])
     model.load_state_dict(model_source['model'])
     model.eval()
     if use_cuda:
